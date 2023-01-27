@@ -1,0 +1,1912 @@
+{
+	"info": {
+		"_postman_id": "62020e8c-151f-4fae-b0f0-ed3201e71254",
+		"name": "OCSTApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuário",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"login\": \"Altrano\",\n\t\"senha\": \"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consultas",
+					"item": [
+						{
+							"name": "{{baseUrl}}/menus/liberados/usuario/:menuPai/:idUsuario",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/menus/liberados/usuario/:menuPai/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"menus",
+										"liberados",
+										"usuario",
+										":menuPai",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "menuPai",
+											"value": "DDS"
+										},
+										{
+											"key": "idUsuario",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/menus/liberados/usuario/:menuPai/:idUsuario/:idSistema",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/menus/liberados/usuario/:menuPai/:idUsuario/:idSistema",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"menus",
+										"liberados",
+										"usuario",
+										":menuPai",
+										":idUsuario",
+										":idSistema"
+									],
+									"variable": [
+										{
+											"key": "menuPai",
+											"value": "OPR"
+										},
+										{
+											"key": "idUsuario",
+											"value": "2"
+										},
+										{
+											"key": "idSistema",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/usuarios/filhos/:loginUsuarioPai",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/usuarios/filhos/:loginUsuarioPai",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios",
+										"filhos",
+										":loginUsuarioPai"
+									],
+									"variable": [
+										{
+											"key": "loginUsuarioPai",
+											"value": "ALTRANO"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/usuario/acessos/disponiveis/:loginAcesso",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/usuario/acessos/disponiveis/:loginAcesso",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario",
+										"acessos",
+										"disponiveis",
+										":loginAcesso"
+									],
+									"variable": [
+										{
+											"key": "loginAcesso",
+											"value": "ADRIANA"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/usuario/acessos/disponiveis/:loginAcesso/:loginPai",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/usuario/acessos/disponiveis/:loginAcesso/:loginPai",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario",
+										"acessos",
+										"disponiveis",
+										":loginAcesso",
+										":loginPai"
+									],
+									"variable": [
+										{
+											"key": "loginAcesso",
+											"value": "ADRIANA"
+										},
+										{
+											"key": "loginPai",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pai Filho",
+					"item": [
+						{
+							"name": "/usuario/consultar/usuariosfilhos",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operacao\": \"ALT\",\n    \"idPai\": 1,\n    \"login\": \"DELTRANO\",\n    \"senha\": \"1234\",\n    \"email\": \"anogueirajr@gmail.com\",\n    \"pessoa\": \"Deltrano da Silva 2\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuario/consultar/usuariosfilhos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario",
+										"consultar",
+										"usuariosfilhos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/colaborador",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"operacao\": \"CAD\",\n\t\"login\": \"a\",\n\t\"senha\": \"a\",\n\t\"email\": \"a\",\n\t\"pessoa\": \"a\",\n\t\"idPai\": 15\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/colaborador",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"colaborador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/colaborador - cad",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"operacao\": \"CAD\",\n\t\"login\": \"a\",\n\t\"senha\": \"a\",\n\t\"email\": \"a\",\n\t\"pessoa\": \"a\",\n\t\"idPai\": 15\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/colaborador",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"colaborador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/colaborador - alt",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 60,\n\t\"operacao\": \"ALT\",\n\t\"login\": \"a2\",\n\t\"email\": \"anogueirajr@gmail.com\",\n\t\"pessoa\": \"a2\",\n\t\"empresa\": \"a2\",\n\t\"idPai\": 15\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/colaborador",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"colaborador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/usuario/consultar/usuariosfilhos/:login",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/usuario/consultar/usuariosfilhos/:login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario",
+										"consultar",
+										"usuariosfilhos",
+										":login"
+									],
+									"variable": [
+										{
+											"key": "login",
+											"value": "Usuario5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/usuario/delegar",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"quem\": 60,\n\t\"para\": 17\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/delegar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"delegar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/usuario/liderados/:id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/usuario/liderados/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario",
+										"liderados",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/usuario/consultarId/:idConsultar",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/usuario/consultarId/:idConsultar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario",
+										"consultarId",
+										":idConsultar"
+									],
+									"variable": [
+										{
+											"key": "idConsultar",
+											"value": "17"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Acesso",
+					"item": [
+						{
+							"name": "{{baseUrl}}/usuario/criar/acesso",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"usuarioId\": 13,\n\t\"menuId\": 410\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuario/criar/acesso",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario",
+										"criar",
+										"acesso"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/usuario/apagar/acesso",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"usuarioId\": 13,\n\t\"menuId\": 710\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuario/apagar/acesso",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario",
+										"apagar",
+										"acesso"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/colaborador/bloqueio",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 20\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/colaborador/bloqueio",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"colaborador",
+										"bloqueio"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/usuario/acessos/:login",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/usuario/acessos/:login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario",
+										"acessos",
+										":login"
+									],
+									"variable": [
+										{
+											"key": "login",
+											"value": "Beltrano"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cadastro",
+					"item": [
+						{
+							"name": "{{baseUrl}}/usuario POST",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"login\": \"ALTRANO\",\n\t\"senha\": \"123\",\n\t\"email\": \"anogueirajr@gmail.com\",\n    \"ativo\": \"S\",\n\t\"codigo\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario"
+									]
+								},
+								"description": "Criando um usuário."
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/usuario/complementar POST",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"login\": \"ALTRANO\",\n\t\"empresa\": \"Altrano S/A\",\n\t\"pessoa\": \"Altrano da Silva\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuario/complementar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuario",
+										"complementar"
+									]
+								},
+								"description": "Gravar os dados complementares do usuário."
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/sistema/usuario/gravar POST",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 1,\n\t\"idSistema\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sistema/usuario/gravar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sistema",
+										"usuario",
+										"gravar"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "{{baseUrl}}/usuario/consultar/",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/usuario/consultar/feltrano",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuario",
+								"consultar",
+								"feltrano"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/equipe/:loginInicial",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/equipe/:loginInicial",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"equipe",
+								":loginInicial"
+							],
+							"variable": [
+								{
+									"key": "loginInicial",
+									"value": "DELTRANO"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sistema",
+			"item": [
+				{
+					"name": "Menus",
+					"item": [
+						{
+							"name": "{{baseUrl}}/menus/:menuPai/:idSistema",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/menus/:menuPai/:idSistema",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"menus",
+										":menuPai",
+										":idSistema"
+									],
+									"variable": [
+										{
+											"key": "menuPai",
+											"value": "DDS"
+										},
+										{
+											"key": "idSistema",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{baseUrl}}/menus/:menuPai",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/menus/:menuPai",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"menus",
+										":menuPai"
+									],
+									"variable": [
+										{
+											"key": "menuPai",
+											"value": "OPR"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "{{baseUrl}}/sistema/usuario/gravar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 13,\n\t\"idSistema\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sistema/usuario/gravar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sistema",
+								"usuario",
+								"gravar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/sistemas/ativos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/sistemas/ativos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sistemas",
+								"ativos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/sistema/usuario/escolhido/:login",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/sistema/usuario/escolhido/:login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sistema",
+								"usuario",
+								"escolhido",
+								":login"
+							],
+							"variable": [
+								{
+									"key": "login",
+									"value": "feltrano"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/sistemanome/usuario/escolhido/:loginSistema",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/sistemadados/usuario/escolhido/:loginSistema",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sistemadados",
+								"usuario",
+								"escolhido",
+								":loginSistema"
+							],
+							"variable": [
+								{
+									"key": "loginSistema",
+									"value": "Beltrano"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/sistemadados/usuario/escolhido/feltrano",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/sistemadados/usuario/escolhido/feltrano",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sistemadados",
+								"usuario",
+								"escolhido",
+								"feltrano"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "{{baseUrl}}/cliente/ins",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"usuarioId\": 1,\n\t\"nome\": \"Cliente 01\",\n\t\"celular\": \"(12) 9 8765-4321\",\n\t\"email\": \"anogueirajr@gmail.com\",\n\t\"tags\": \"\",\n\t\"ativo\": \"S\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "192.168.15.127:8888/cliente/ins",
+							"host": [
+								"192",
+								"168",
+								"15",
+								"127"
+							],
+							"port": "8888",
+							"path": [
+								"cliente",
+								"ins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/cliente/upd",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 5,\n\t\"nome\": \"Deltrano Clientinho 03\",\n\t\"celular\": \"+55 12 9 1111-3333\",\n\t\"email\": \"anogueirajr@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cliente/upd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								"upd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/cliente/del",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 2,\n\t\"usuarioId\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cliente/del",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								"del"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/cliente/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cliente/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/cliente/usuario/:idUsuario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cliente/usuario/:idUsuario",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								"usuario",
+								":idUsuario"
+							],
+							"variable": [
+								{
+									"key": "idUsuario",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/cliente/nome/:nome",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cliente/nome/:nome",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								"nome",
+								":nome"
+							],
+							"variable": [
+								{
+									"key": "nome",
+									"value": "inho"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/cliente/celular/:celular",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cliente/celular/:celular",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								"celular",
+								":celular"
+							],
+							"variable": [
+								{
+									"key": "celular",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/cliente/email/:email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cliente/email/:email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								"email",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "nogue"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/cliente/empresa/:idUsuarioEmpresa",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cliente/empresa/:idUsuarioEmpresa/:amostra",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cliente",
+								"empresa",
+								":idUsuarioEmpresa",
+								":amostra"
+							],
+							"variable": [
+								{
+									"key": "idUsuarioEmpresa",
+									"value": "DELTRANO"
+								},
+								{
+									"key": "amostra",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "{{baseUrl}}/produto/ins",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": null,\n    \"usuarioId\": 1,\n\t\"codigo\": \"COD02\",\n\t\"nome\": \"PRODUTO 02\",\n\t\"descricao\": \"DESCRICAO 02\",\n    \"custo\": 1.23,\n    \"preco\": 4.56,\n    \"tags\": \"tag2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/produto/ins",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"produto",
+								"ins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/produto/itens/ins",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"produtoId\": 14,\n\t\"produtoItemId\": 11\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/produto/itens/ins",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"produto",
+								"itens",
+								"ins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/produto/itens/del",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"produtoId\": 14,\n\t\"produtoItemId\": 13\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/produto/itens/del",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"produto",
+								"itens",
+								"del"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/produto/itens/:idProduto",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/produto/itens/:idProduto",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"produto",
+								"itens",
+								":idProduto"
+							],
+							"variable": [
+								{
+									"key": "idProduto",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/produto/composicao/disponiveis/:idProdutoASerComposto",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/produto/itens/:idProduto",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"produto",
+								"itens",
+								":idProduto"
+							],
+							"variable": [
+								{
+									"key": "idProduto",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/produto/empresa/:idUsuarioEmpresa/:amostra",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/produto/empresa/:idUsuarioEmpresa/:amostra",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"produto",
+								"empresa",
+								":idUsuarioEmpresa",
+								":amostra"
+							],
+							"variable": [
+								{
+									"key": "idUsuarioEmpresa",
+									"value": "Beltrano"
+								},
+								{
+									"key": "amostra",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Automotivo",
+			"item": [
+				{
+					"name": "{{baseUrl}}/automotivo/estatisticas/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/automotivo/estatisticas/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"automotivo",
+								"estatisticas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LocacaoRoupa",
+			"item": [
+				{
+					"name": "{{baseUrl}}/locacao/roupa/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/locacao/roupa/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locacao",
+								"roupa",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/locacao/roupa/cliente/:clienteId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/locacao/roupa/cliente/:clienteId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locacao",
+								"roupa",
+								"cliente",
+								":clienteId"
+							],
+							"variable": [
+								{
+									"key": "clienteId",
+									"value": "36"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/locacao/roupa/usuario/:usuarioId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/locacao/roupa/usuario/:usuarioId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locacao",
+								"roupa",
+								"usuario",
+								":usuarioId"
+							],
+							"variable": [
+								{
+									"key": "usuarioId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/locacao/roupa/ins",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usuarioId\": 1,\n    \"clienteId\": 2,\n    \"descricao\": \"Locação via Postman\",\n    \"provar\": \"2021-03-10\",\n    \"retirar\": \"2021-03-15\",\n    \"devolver\": \"2021-03-20\",\n    \"valor\": 123,\n    \"observacao\": \"Nada a declarar\",\n    \"tags\": \"\",\n    \"ativo\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/locacao/roupa/ins",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locacao",
+								"roupa",
+								"ins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/locacao/roupa/empresa/:usuarioEmpresaId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/locacao/roupa/empresa/:usuarioEmpresaId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locacao",
+								"roupa",
+								"empresa",
+								":usuarioEmpresaId"
+							],
+							"variable": [
+								{
+									"key": "usuarioEmpresaId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/locacao/roupa/produtos/:locacaoRoupaId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/locacao/roupa/produtos/:locacaoRoupaId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locacao",
+								"roupa",
+								"produtos",
+								":locacaoRoupaId"
+							],
+							"variable": [
+								{
+									"key": "locacaoRoupaId",
+									"value": "147"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/locacao/roupa/arquivadas/:usuarioEmpresaIdLocacoesArquivadas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/locacao/roupa/arquivadas/:usuarioEmpresaIdLocacoesArquivadas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locacao",
+								"roupa",
+								"arquivadas",
+								":usuarioEmpresaIdLocacoesArquivadas"
+							],
+							"variable": [
+								{
+									"key": "usuarioEmpresaIdLocacoesArquivadas",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Financeiro",
+			"item": []
+		},
+		{
+			"name": "Tag",
+			"item": [
+				{
+					"name": "{{baseUrl}}/tag/usuario/:idUsuario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/tag/usuario/20",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag",
+								"usuario",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/tag/del",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 7,\n\t\"usuarioId\": 20,\n    \"tudo\": \"N\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tag/del",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag",
+								"del"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
