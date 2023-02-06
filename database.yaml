@@ -1,0 +1,6 @@
+username: "postgres"
+password: "SUA_SENHA"
+# host: "db"
+host: "000.000.000.000"
+port: 5432
+databaseName: "postgres"
