@@ -1,0 +1,24 @@
+version: "3"
+services:
+  ocst_api:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 80:80
+    # links:
+    #   - db
+    # depends_on:
+    #   - db
+  # db:
+  #   image: postgres
+  #   container_name: "CONTAINER_NAME"
+  #   ports:
+  #     - "5432:5432"
+  #   restart: always
+  #   environment:
+  #     POSTGRES_PASSWORD: SENHA_AQUI
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_DB: postgres
+  #   volumes:
+  #     - ./docker/pgdata:/var/lib/postgresql/data
