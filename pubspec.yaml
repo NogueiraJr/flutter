@@ -1,0 +1,17 @@
+name: ocstapi
+description: An Aqueduct application with a database connection and data model.
+version: 0.0.1
+author: stable|kernel <ocstapp@gmail.com>
+
+environment:
+  sdk: ">=2.0.0 <3.0.0"
+
+dependencies:
+  aqueduct: ^3.0.0
+  jaguar_jwt: ^2.1.6
+  intl: ^0.16.1
+  mailer: ^3.0.4
+
+dev_dependencies:
+  test: ^1.0.0
+  aqueduct_test: ^1.0.0
